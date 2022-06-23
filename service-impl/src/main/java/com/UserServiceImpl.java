@@ -20,4 +20,15 @@ public class UserServiceImpl implements UserService{
             return optionalUser.get();
 
     }
+    @Override
+    public void AddNewUser(User user) {
+        Optional<User> userExist = userRepository.findByEmail(user.getEmail());
+        if(userExist.isPresent())
+            throw new IllegalStateException("Email already taken!");
+        else
+            userRepository.save(user);
+
+    }
+
+
 }
