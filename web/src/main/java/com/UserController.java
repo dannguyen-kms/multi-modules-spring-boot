@@ -18,11 +18,20 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/student")
 public class UserController {
     private final UserService userService;
+    private final UserMapper userMapper;
 
     @GetMapping
     public List<User> getUsers(){
         return userService.getAllUsers();
     }
+
+    @GetMapping("{email}")
+    public UserDTO getUser(
+            @PathVariable("email") String email
+    ){
+        return userMapper.INSTANCE.toDto(userService.findUserByEmail(email));
+    }
+
     @PostMapping
     public void addNewUser(
             @RequestBody UserDTO userDTO

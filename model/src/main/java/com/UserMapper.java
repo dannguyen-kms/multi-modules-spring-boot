@@ -1,9 +1,6 @@
 package com;
 
-import org.mapstruct.InheritConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
 
@@ -14,7 +11,7 @@ public interface UserMapper {
     @Mapping(source = "dob", target = "dob", dateFormat = "dd/MM/yyyy")
     UserDTO toDto(User user);
 
-    @Mapping(source = "dob", target = "dob", dateFormat = "dd/MM/yyyy")
+    @InheritInverseConfiguration
     User toEntity(UserDTO user);
 
     @InheritConfiguration
