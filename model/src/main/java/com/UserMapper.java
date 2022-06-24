@@ -1,7 +1,9 @@
 package com;
 
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 
@@ -14,4 +16,8 @@ public interface UserMapper {
 
     @Mapping(source = "dob", target = "dob", dateFormat = "dd/MM/yyyy")
     User toEntity(UserDTO user);
+
+    @InheritConfiguration
+    @Mapping(target = "email",ignore = true)
+    void updateEntity(UserDTO userDTO, @MappingTarget User user);
 }

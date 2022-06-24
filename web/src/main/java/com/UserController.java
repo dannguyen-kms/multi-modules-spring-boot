@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/student")
 public class UserController {
     private final UserService userService;
-    private final UserMapper userMapper;
+
     @GetMapping
     public List<User> getUsers(){
         return userService.getAllUsers();
@@ -27,8 +27,15 @@ public class UserController {
     public void AddNewUser(
             @RequestBody UserDTO userDTO
     ){
-        User user1 = userMapper.INSTANCE.toEntity(userDTO);
-        userService.AddNewUser(user1);
+        userService.AddNewUser(userDTO);
+    }
+
+    @PutMapping("{email}")
+    public void UpdateUser(
+            @PathVariable("email") String email,
+            @RequestBody UserDTO userDTO
+    ){
+        userService.UpdateUser(email,userDTO);
     }
 
 }

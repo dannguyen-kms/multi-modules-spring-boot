@@ -11,6 +11,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
     @Override
     public User findUserByEmail(String email)throws UserNotFoundException {
         Optional<User> optionalUser = userRepository.findByEmail(email);
@@ -22,8 +23,9 @@ public class UserServiceImpl implements UserService{
 
     }
     @Override
-    public void AddNewUser(User user) {
-        Optional<User> userExist = userRepository.findByEmail(user.getEmail());
+    public void AddNewUser(UserDTO userDTO) {
+        User user = userMapper.INSTANCE.toEntity(userDTO);
+        Optional<User> userExist = userRepository.findByEmail(userDTO.getEmail());
         if(userExist.isPresent())
             throw new IllegalStateException("Email already taken!");
         else
@@ -38,5 +40,12 @@ public class UserServiceImpl implements UserService{
             throw new IllegalStateException("Not found any users");
 
         return userList;
+    }
+
+    @Override
+    public void UpdateUser(String email, UserDTO userDTO){
+        User user = findUserByEmail(email);
+        userMapper.INSTANCE.updateEntity(userDTO,user);
+        userRepository.save(user);
     }
 }
