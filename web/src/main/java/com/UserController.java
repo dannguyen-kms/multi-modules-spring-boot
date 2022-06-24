@@ -21,8 +21,7 @@ public class UserController {
 
     @GetMapping
     public List<User> getUsers(){
-        User user = User.builder().setName("Dan").setDob(LocalDate.now()).setEmail("hieudankaz@gmail.com").build();
-        return List.of(user);
+        return userService.getAllUsers();
     }
     @PostMapping
     public void AddNewUser(

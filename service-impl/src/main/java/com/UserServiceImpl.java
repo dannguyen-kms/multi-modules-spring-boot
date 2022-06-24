@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,5 +31,12 @@ public class UserServiceImpl implements UserService{
 
     }
 
+    @Override
+    public List<User> getAllUsers() {
+        List<User> userList = userRepository.findAll();
+        if(userList.isEmpty())
+            throw new IllegalStateException("Not found any users");
 
+        return userList;
+    }
 }
