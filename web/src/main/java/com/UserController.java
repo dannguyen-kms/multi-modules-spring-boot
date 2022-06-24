@@ -1,15 +1,9 @@
 package com;
-import com.UserService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
@@ -21,36 +15,41 @@ public class UserController {
     private final UserMapper userMapper;
 
     @GetMapping
-    public List<User> getUsers(){
-        return userService.getAllUsers();
+    public ResponseEntity<List<User>> getUsers(){
+        return ResponseEntity.ok()
+                .body(userService.getAllUsers());
     }
 
     @GetMapping("{email}")
-    public UserDTO getUser(
+    public ResponseEntity<UserDTO> getUser(
             @PathVariable("email") String email
     ){
-        return userMapper.INSTANCE.toDto(userService.findUserByEmail(email));
+        return ResponseEntity.ok()
+                .body(userMapper.INSTANCE.toDto(userService.findUserByEmail(email)));
     }
 
     @PostMapping
-    public void addNewUser(
+    public ResponseEntity addNewUser(
             @RequestBody UserDTO userDTO
     ){
         userService.addNewUser(userDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("{email}")
-    public void updateUser(
+    public ResponseEntity updateUser(
             @PathVariable("email") String email,
             @RequestBody UserDTO userDTO
     ){
         userService.updateUser(email,userDTO);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @DeleteMapping ("{email}")
-    public void deleteUser(
+    public ResponseEntity deleteUser(
             @PathVariable("email") String email
     ){
         userService.deleteUser(email);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
