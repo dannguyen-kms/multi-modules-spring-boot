@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@SpringBootApplication(scanBasePackages = "com.*")
 @EnableJpaRepositories
 @SpringBootApplication
-public class Main  extends SpringBootServletInitializer {
-    public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
-    }
+public class Main extends SpringBootServletInitializer {
+  public static void main(String[] args) {
+    SpringApplication.run(Main.class, args);
+  }
 }

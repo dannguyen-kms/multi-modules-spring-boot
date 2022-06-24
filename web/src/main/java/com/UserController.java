@@ -1,4 +1,5 @@
 package com;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ public class UserController {
     private final UserMapper userMapper;
 
     @GetMapping
-    public ResponseEntity<List<User>> getUsers(){
+    public ResponseEntity<List<User>> getUsers() {
         return ResponseEntity.ok()
                 .body(userService.getAllUsers());
     }
@@ -24,7 +25,7 @@ public class UserController {
     @GetMapping("{email}")
     public ResponseEntity<UserDTO> getUser(
             @PathVariable("email") String email
-    ){
+    ) {
         return ResponseEntity.ok()
                 .body(userMapper.INSTANCE.toDto(userService.findUserByEmail(email)));
     }
@@ -32,7 +33,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity addNewUser(
             @RequestBody UserDTO userDTO
-    ){
+    ) {
         userService.addNewUser(userDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -41,15 +42,15 @@ public class UserController {
     public ResponseEntity updateUser(
             @PathVariable("email") String email,
             @RequestBody UserDTO userDTO
-    ){
-        userService.updateUser(email,userDTO);
+    ) {
+        userService.updateUser(email, userDTO);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @DeleteMapping ("{email}")
+    @DeleteMapping("{email}")
     public ResponseEntity deleteUser(
             @PathVariable("email") String email
-    ){
+    ) {
         userService.deleteUser(email);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
