@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService{
 
     }
     @Override
-    public void AddNewUser(UserDTO userDTO) {
+    public void addNewUser(UserDTO userDTO) {
         User user = userMapper.INSTANCE.toEntity(userDTO);
         Optional<User> userExist = userRepository.findByEmail(userDTO.getEmail());
         if(userExist.isPresent())
@@ -43,9 +43,14 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void UpdateUser(String email, UserDTO userDTO){
+    public void updateUser(String email, UserDTO userDTO){
         User user = findUserByEmail(email);
         userMapper.INSTANCE.updateEntity(userDTO,user);
         userRepository.save(user);
+    }
+    @Override
+    public void deleteUser(String email){
+        User user = findUserByEmail(email);
+        userRepository.delete(user);
     }
 }

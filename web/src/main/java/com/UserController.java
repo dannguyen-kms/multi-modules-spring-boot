@@ -24,18 +24,24 @@ public class UserController {
         return userService.getAllUsers();
     }
     @PostMapping
-    public void AddNewUser(
+    public void addNewUser(
             @RequestBody UserDTO userDTO
     ){
-        userService.AddNewUser(userDTO);
+        userService.addNewUser(userDTO);
     }
 
     @PutMapping("{email}")
-    public void UpdateUser(
+    public void updateUser(
             @PathVariable("email") String email,
             @RequestBody UserDTO userDTO
     ){
-        userService.UpdateUser(email,userDTO);
+        userService.updateUser(email,userDTO);
     }
 
+    @DeleteMapping ("{email}")
+    public void deleteUser(
+            @PathVariable("email") String email
+    ){
+        userService.deleteUser(email);
+    }
 }
