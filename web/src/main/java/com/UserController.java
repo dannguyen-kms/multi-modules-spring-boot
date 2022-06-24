@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/student")
 public class UserController {
     private final UserService userService;
-
+    private final UserMapper userMapper;
     @GetMapping
     public List<User> getUsers(){
         return userService.getAllUsers();
@@ -27,9 +27,8 @@ public class UserController {
     public void AddNewUser(
             @RequestBody UserDTO userDTO
     ){
-        LocalDate UserDoB = LocalDate.parse(userDTO.getDob(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        User user = User.builder().setName(userDTO.getName()).setDob(UserDoB).setEmail(userDTO.getEmail()).build();
-        userService.AddNewUser(user);
+        User user1 = userMapper.INSTANCE.toEntity(userDTO);
+        userService.AddNewUser(user1);
     }
 
 }
