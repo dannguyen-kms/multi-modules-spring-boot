@@ -1,12 +1,18 @@
 package com;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+/** Interface business logic for user. */
 @Service
-public interface UserService{
-    User findUserByEmail(String email) throws UserNotFoundException;
-    void AddNewUser(User user);
-    List<User> getAllUsers();
+public interface UserService {
+  User findUserByEmail(String email) throws UserNotFoundException;
+
+  void addNewUser(UserDto userDtO);
+
+  List<User> getAllUsers();
+
+  void updateUser(String email, UserDto userDtO);
+
+  void deleteUser(String email);
 }

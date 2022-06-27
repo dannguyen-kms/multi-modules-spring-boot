@@ -1,35 +1,52 @@
 package com;
-import com.UserService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-
+/** Controller provide API for using user service. */
 @RestController
 @AllArgsConstructor
 @RequestMapping(path = "/api/v1/student")
 public class UserController {
-    private final UserService userService;
+  private final UserService userService;
+  private final UserMapper userMapper;
 
-    @GetMapping
-    public List<User> getUsers(){
-        return userService.getAllUsers();
-    }
-    @PostMapping
-    public void AddNewUser(
-            @RequestBody UserDTO userDTO
-    ){
-        LocalDate UserDoB = LocalDate.parse(userDTO.getDob(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        User user = User.builder().setName(userDTO.getName()).setDob(UserDoB).setEmail(userDTO.getEmail()).build();
-        userService.AddNewUser(user);
-    }
+  @GetMapping
+  public ResponseEntity<List<User>> getUsers() {
+    return ResponseEntity.ok().body(userService.getAllUsers());
+  }
 
+  @GetMapping("{email}")
+  public ResponseEntity<UserDto> getUser(@PathVariable("email") String email) {
+    return ResponseEntity.ok().body(userMapper.INSTANCE.toDto(userService.findUserByEmail(email)));
+  }
+
+  @PostMapping
+  public ResponseEntity addNewUser(@RequestBody UserDto userDto) {
+    userService.addNewUser(userDto);
+    return ResponseEntity.status(HttpStatus.CREATED).build();
+  }
+
+  @PutMapping("{email}")
+  public ResponseEntity updateUser(
+      @PathVariable("email") String email, @RequestBody UserDto userDto) {
+    userService.updateUser(email, userDto);
+    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+  }
+
+  @DeleteMapping("{email}")
+  public ResponseEntity deleteUser(@PathVariable("email") String email) {
+    userService.deleteUser(email);
+    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+  }
 }
