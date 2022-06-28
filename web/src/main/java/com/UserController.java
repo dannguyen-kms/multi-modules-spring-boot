@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 /** Controller provide API for using user service. */
 @RestController
 @AllArgsConstructor
-@RequestMapping(path = "/api/v1/student")
+@RequestMapping(path = "/api/v1/user")
 public class UserController {
   private final UserService userService;
   private final UserMapper userMapper;
