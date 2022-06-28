@@ -21,13 +21,12 @@ class UserRepositoryTest {
   @Test
   void GivenEmail_WhenUserExist_ThenReturnUser() {
     String email = "hieudan@gmail.com";
-    User user = User.builder().email(email).name("hieudan").dob(LocalDate.now()).build();
-    userRepository.save(user);
+    User expectedUser = User.builder().email(email).name("hieudan").dob(LocalDate.now()).build();
+    userRepository.save(expectedUser);
 
-    User user2 = userRepository.findByEmail(email).get();
+    User actualUser = userRepository.findByEmail(email).get();
 
-    Boolean rs = user2.equals(user);
-    assertThat(rs).isTrue();
+    assertThat(actualUser).usingRecursiveComparison().isEqualTo(expectedUser);
   }
 
   @Test
