@@ -32,3 +32,31 @@
 2022-06-27 13:07:04.700  WARN 19484 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m44s137ms873µs600ns).
 2022-06-27 14:09:41.758  INFO 19484 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-06-27 14:09:41.765  INFO 19484 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-28 15:44:43.571  INFO 17416 --- [main] com.UserAppWeb                           : Starting UserAppWeb using Java 17.0.3 on 50VPHR2 with PID 17416 (D:\Learn\LearnSpringBoot\spring-multiple-modules\web\target\classes started by danhieunguyen in D:\Learn\LearnSpringBoot\spring-multiple-modules)
+2022-06-28 15:44:43.585  INFO 17416 --- [main] com.UserAppWeb                           : No active profile set, falling back to 1 default profile: "default"
+2022-06-28 15:44:44.523  INFO 17416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-28 15:44:44.795  INFO 17416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 262 ms. Found 1 JPA repository interfaces.
+2022-06-28 15:44:45.512  INFO 17416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-28 15:44:45.528  INFO 17416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-28 15:44:45.528  INFO 17416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-28 15:44:45.705  INFO 17416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-28 15:44:45.706  INFO 17416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2059 ms
+2022-06-28 15:44:45.879  INFO 17416 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-28 15:44:45.908  INFO 17416 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-28 15:44:46.001  INFO 17416 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-28 15:44:46.076  INFO 17416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-28 15:44:46.078  WARN 17416 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-28 15:44:47.000  INFO 17416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-28 15:44:47.015  INFO 17416 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-28 15:44:47.691  INFO 17416 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-28 15:44:47.700  INFO 17416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-28 15:44:47.997  WARN 17416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-28 15:44:48.305  INFO 17416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-28 15:44:48.321  INFO 17416 --- [main] com.UserAppWeb                           : Started UserAppWeb in 5.095 seconds (JVM running for 5.826)
+2022-06-28 15:45:27.970  INFO 17416 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-28 15:45:27.970  INFO 17416 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-28 15:45:27.971  INFO 17416 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-28 15:45:28.166  INFO 17416 --- [http-nio-8080-exec-2] com.UserServiceImpl                      : Created user with email: hieudan@gmail.com
+2022-06-28 15:45:32.211  INFO 17416 --- [http-nio-8080-exec-3] com.UserServiceImpl                      : Founded user with email: hieudan@gmail.com
+2022-06-28 15:45:37.325  INFO 17416 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-28 15:45:37.325  INFO 17416 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'

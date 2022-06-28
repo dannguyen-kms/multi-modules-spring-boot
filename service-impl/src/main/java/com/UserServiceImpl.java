@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
 
     if (userExist.isPresent()) {
       log.error(String.format("Email already taken when use: %s", userDto.getEmail()));
-
       throw new IllegalStateException("Email already taken!");
     }
 
