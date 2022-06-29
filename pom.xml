@@ -9,6 +9,7 @@
         <module>service-impl</module>
         <module>repository</module>
         <module>web</module>
+        <module>configuration</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
