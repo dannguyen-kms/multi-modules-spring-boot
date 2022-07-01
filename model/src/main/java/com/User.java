@@ -11,9 +11,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 /** Entity User. */
+@Schema(hidden = true)
 @Entity
 @Table(name = "\"user\"")
 @AllArgsConstructor
