@@ -20,5 +20,6 @@ public interface UserMapper {
 
   @InheritConfiguration
   @Mapping(target = "email", ignore = true)
+  @Mapping(target = "password", ignore = true)
   void updateEntity(UserDto userDto, @MappingTarget User user);
 }
