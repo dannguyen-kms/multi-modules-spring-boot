@@ -1,10 +1,12 @@
 package com;
 
+import com.security.PasswordEncoder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -19,10 +21,12 @@ class UserServiceImplTest {
 
   @Mock private UserRepository userRepository;
   @Mock private UserMapper userMapper;
+  @Mock private PasswordEncoder passwordEncoder;
 
   @BeforeEach
   void setUp() {
-    userService = new UserServiceImpl(userRepository, userMapper);
+
+    userService = new UserServiceImpl(userRepository, userMapper, passwordEncoder);
   }
 
   @Test
@@ -55,12 +59,22 @@ class UserServiceImplTest {
         UserDto.builder()
             .email(email)
             .name("hieudan")
+            .role("ADMIN")
+            .password("123456789")
             .dob(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
             .build();
 
-    User expectedUser = User.builder().email(email).name("hieudan").dob(LocalDate.now()).build();
-    Mockito.when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
+    User expectedUser =
+        User.builder()
+            .password("123456789")
+            .role("ADMIN")
+            .email(email)
+            .name("hieudan")
+            .dob(LocalDate.now())
+            .build();
 
+    Mockito.when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
+    Mockito.when(passwordEncoder.encode(userDto.getPassword())).thenReturn(userDto.getPassword());
     userService.addNewUser(userDto);
     Mockito.verify(userRepository).save(expectedUser);
   }
@@ -112,6 +126,8 @@ class UserServiceImplTest {
         UserDto.builder()
             .email(email)
             .name("hieudan")
+            .role("ADMIN")
+            .password("123456789")
             .dob(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
             .build();
 
@@ -130,6 +146,8 @@ class UserServiceImplTest {
         UserDto.builder()
             .email(email)
             .name("hieudan")
+            .role("ADMIN")
+            .password("123456789")
             .dob(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
             .build();
 

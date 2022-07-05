@@ -1,6 +1,4 @@
-package com;
-
-import lombok.extern.slf4j.Slf4j;
+package com.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
