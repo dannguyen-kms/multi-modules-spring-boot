@@ -1,35 +1,20 @@
-2022-06-28 19:51:10.282  INFO 18480 --- [main] com.UserControllerTest                   : Starting UserControllerTest using Java 17.0.3 on 50VPHR2 with PID 18480 (started by danhieunguyen in D:\Learn\LearnSpringBoot\spring-multiple-modules\web)
-2022-06-28 19:51:10.296  INFO 18480 --- [main] com.UserControllerTest                   : No active profile set, falling back to 1 default profile: "default"
-2022-06-28 19:51:11.348  INFO 18480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-28 19:51:11.674  INFO 18480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 318 ms. Found 1 JPA repository interfaces.
-2022-06-28 19:51:12.367  INFO 18480 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-28 19:51:12.433  INFO 18480 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-28 19:51:12.591  INFO 18480 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-28 19:51:12.741  INFO 18480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-06-28 19:51:12.747  WARN 18480 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-28 19:51:13.095  INFO 18480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-06-28 19:51:13.124  INFO 18480 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-06-28 19:51:14.045  INFO 18480 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-28 19:51:14.052  INFO 18480 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-28 19:51:14.672  WARN 18480 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-28 19:51:15.243  INFO 18480 --- [main] com.UserControllerTest                   : Started UserControllerTest in 5.272 seconds (JVM running for 6.51)
-2022-06-28 19:51:15.448  INFO 18480 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 19:51:15.448  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 19:51:15.449  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-06-28 19:51:15.466  INFO 18480 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 19:51:15.466  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 19:51:15.466  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-06-28 19:51:15.471  INFO 18480 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 19:51:15.472  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 19:51:15.472  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-06-28 19:51:15.477  INFO 18480 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 19:51:15.477  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 19:51:15.478  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-06-28 19:51:15.483  INFO 18480 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 19:51:15.483  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 19:51:15.483  INFO 18480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-06-28 19:51:15.593 ERROR 18480 --- [main] com.UserServiceImpl                      : Not found any users
-2022-06-28 19:51:15.607  INFO 18480 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-06-28 19:51:15.608  INFO 18480 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-06-28 19:51:15.715  INFO 18480 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-06-28 19:51:15.751  INFO 18480 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-07-05 09:51:13.630  INFO 20344 --- [main] com.testjpa                              : Starting testjpa using Java 17.0.3 on 50VPHR2 with PID 20344 (started by danhieunguyen in D:\Learn\LearnSpringBoot\spring-multiple-modules\web)
+2022-07-05 09:51:13.641  INFO 20344 --- [main] com.testjpa                              : No active profile set, falling back to 1 default profile: "default"
+2022-07-05 09:51:14.886  INFO 20344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-05 09:51:15.281  INFO 20344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 387 ms. Found 1 JPA repository interfaces.
+2022-07-05 09:51:16.128  INFO 20344 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-05 09:51:16.198  INFO 20344 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-05 09:51:16.366  INFO 20344 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-05 09:51:16.532  INFO 20344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-05 09:51:16.544  WARN 20344 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-07-05 09:51:16.923  INFO 20344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-05 09:51:16.973  INFO 20344 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-07-05 09:51:18.142  INFO 20344 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-05 09:51:18.162  INFO 20344 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-05 09:51:18.860  WARN 20344 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-05 09:51:19.133  INFO 20344 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d0ae3d1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2114955c, org.springframework.security.web.context.SecurityContextPersistenceFilter@323a47fe, org.springframework.security.web.header.HeaderWriterFilter@794ffe22, org.springframework.web.filter.CorsFilter@1362f4, org.springframework.security.web.authentication.logout.LogoutFilter@4cd3e2f3, com.CustomAuthorizationFilter@6e5506c9, com.CustomAuthenticationFilter@446b74b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6752d7fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9a88a92, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41d0b71d, org.springframework.security.web.session.SessionManagementFilter@125c443, org.springframework.security.web.access.ExceptionTranslationFilter@c3fd72, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77199818]
+2022-07-05 09:51:20.915  INFO 20344 --- [main] com.testjpa                              : Started testjpa in 7.603 seconds (JVM running for 8.994)
+2022-07-05 09:51:21.136  INFO 20344 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-05 09:51:21.137  INFO 20344 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-07-05 09:51:21.264  INFO 20344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-07-05 09:51:21.287  INFO 20344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

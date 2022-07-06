@@ -35,6 +35,12 @@ public class User {
   @Column(name = "email", unique = true)
   private String email;
 
+  @Column(name = "role",nullable = false)
+  private String role;
+
+  @Column(name = "password",nullable = false)
+  private String password;
+
   @Column(name = "dob")
   private LocalDate dob;
 
