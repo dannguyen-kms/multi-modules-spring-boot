@@ -20,7 +20,9 @@ public class UserDto {
   @StartWith(value = "KMS_")
   private String name;
 
-  @NotNull @Email private String email;
+  @NotNull(message = "email must not null")
+  @Email
+  private String email;
 
   @BirtDate
   @NotNull(message = "BirtDate must not null")
