@@ -16,6 +16,6 @@ public class PasswordEncoder {
   }
 
   public boolean matches(String raw, String pass) {
-    return passwordEncoder().matches(raw,pass);
+    return passwordEncoder().matches(raw, pass);
   }
 }

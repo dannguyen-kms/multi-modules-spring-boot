@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-/** Business logic for User entity. */
+/* Business logic for User entity. */
 @Slf4j
 @Service
 @Transactional

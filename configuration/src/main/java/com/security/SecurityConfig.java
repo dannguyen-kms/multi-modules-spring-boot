@@ -30,7 +30,6 @@ import static com.SecurityConstant.LOG_IN_URL;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-@Profile(value = {"development", "production"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   private final UserDetailsService userDetailsService;
 
@@ -38,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
     auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder.passwordEncoder());
   }
 
@@ -48,7 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     customAuthenticationFilter.setFilterProcessesUrl(LOG_IN_URL);
     http.csrf().disable();
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
     http.cors()
         .and()
         .authorizeRequests()
